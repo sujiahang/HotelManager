@@ -42,7 +42,7 @@ function SerachRoomType()
             {header:"房间价格",width:90,align:'center',renderer:getPrice,dataIndex:'TypePrice'},
             {header:"是否有电视",width:80,align:'center',dataIndex:'IsTv'},
             {header:"是否有空调",width:80,align:'center',dataIndex:'IsKongTiao'},
-            {header:"备注",width:150,dataIndex:'Remark'}
+            {header:"备注",width:250,dataIndex:'Remark'}
         ]
     );
     
@@ -74,8 +74,8 @@ function SerachRoomType()
                         xtype: 'grid',
                         cm:colModel,
                         store:strSearchType,
-	                    height: 220,
-	                    width:280,
+	                    height: 400,
+	                    width:600,
 	                    title:'酒店房间类型信息',
 	                    monitorWindowResize: false,
                         autoSizeColumns: true,
@@ -98,8 +98,8 @@ function SerachRoomType()
     (
         {
             layout : 'fit',
-            width : 550,
-            height : 300,
+            width : 600,
+            height : 400,
             closeAction : 'hide',
             collapsible:true, //允许缩放条
             closable:true,

@@ -36,11 +36,11 @@ function SerachMoney()
     var colModel = new Ext.grid.ColumnModel
     (
         [  
-            {header:"开房时间",width:110,dataIndex:'OpenTime'},
-            {header:"房间号",width:60,align:'center',dataIndex:'RoomNumber'},
-            {header:"登记身份证",width:120,dataIndex:'GuestNumber'},
+            {header: "退房时间", width: 150, dataIndex: 'MoneyDate' },
+            {header:"开房时间",width:150,dataIndex:'OpenTime'},
+            {header:"房间号",width:80,align:'center',dataIndex:'RoomNumber'},
+            {header:"登记身份证",width:150,dataIndex:'GuestNumber'},
             {header:"登记姓名",width:85,align:'center',dataIndex:'GuestName'},
-            {header:"退房时间",width:110,dataIndex:'MoneyDate'},
             {header:"金额",width:80,align:'center',renderer:getColor,dataIndex:'DetailsMoney'}
         ]
     );
@@ -110,7 +110,7 @@ function SerachMoney()
                                     cm:colModel,
                                     store:strSearchMoney,
                                     height:450,
-                                    width:585, //这个不设置就没得滚动条
+                                    width:760, //这个不设置就没得滚动条
                                     title:'查询账目明细',
                                     monitorWindowResize: false,
                                     autoSizeColumns: true,
@@ -143,8 +143,8 @@ function SerachMoney()
                             {
                                 //newWin.hide();
                                 Ext.getCmp("registerWindow").hide();
-                                Ext.getCmp('beginTime').setValue("");
-                                Ext.getCmp('endTime').setValue("");
+                                //Ext.getCmp('beginTime').setValue("");
+                                //Ext.getCmp('endTime').setValue("");
                             }
                 }
             ]
@@ -160,7 +160,7 @@ function SerachMoney()
     (
         {
             layout : 'fit',
-            width : 620,
+            width : 730,
             height : 500,
             collapsible:true, //允许缩放条
             closeAction : 'hide',

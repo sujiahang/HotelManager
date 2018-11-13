@@ -42,7 +42,7 @@ function SerachRoom()
             {header:"床位数",width:90,align:'center',dataIndex:'BedNumber'},
             {header:"房间类型",width:80,align:'center',dataIndex:'TypeName'},
             {header:"房间状态",width:80,align:'center',renderer:getType,dataIndex:'StateName'},
-            {header:"备注",width:150,align:'center',dataIndex:'Remark'}
+            {header:"备注",width:200,align:'center',dataIndex:'Remark'}
         ]
     );
     //设置房间状态颜色
@@ -79,8 +79,8 @@ function SerachRoom()
                         xtype: 'grid',
                         cm:colModel,
                         store:strSerachRoom,
-	                    height: 220,
-	                    width:280, //这个不设置就没得滚动条
+	                    height: 450,
+	                    width:550, //这个不设置就没得滚动条
 	                    title:'酒店房间信息',
                         monitorWindowResize: false,
                         autoSizeColumns: true,
@@ -104,7 +104,7 @@ function SerachRoom()
         {
             layout : 'fit',
             width : 550,
-            height : 300,
+            height : 500,
             closeAction : 'hide',
             collapsible:true, //允许缩放条
             closable:true,
