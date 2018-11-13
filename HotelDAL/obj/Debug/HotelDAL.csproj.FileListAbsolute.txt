@@ -1,0 +1,16 @@
+E:\郝光明工作\工作\代码整理\9.4\第二个酒店管理系统(ExtJs)源码\MyHotelManager\HotelDAL\bin\Debug\HotelDAL.dll
+E:\郝光明工作\工作\代码整理\9.4\第二个酒店管理系统(ExtJs)源码\MyHotelManager\HotelDAL\bin\Debug\HotelDAL.pdb
+E:\郝光明工作\工作\代码整理\9.4\第二个酒店管理系统(ExtJs)源码\MyHotelManager\HotelDAL\bin\Debug\HotelModels.dll
+E:\郝光明工作\工作\代码整理\9.4\第二个酒店管理系统(ExtJs)源码\MyHotelManager\HotelDAL\bin\Debug\HotelModels.pdb
+E:\郝光明工作\工作\代码整理\9.4\第二个酒店管理系统(ExtJs)源码\MyHotelManager\HotelDAL\obj\Debug\HotelDAL.csprojResolveAssemblyReference.cache
+E:\郝光明工作\工作\代码整理\9.4\第二个酒店管理系统(ExtJs)源码\MyHotelManager\HotelDAL\obj\Debug\HotelDAL.dll
+E:\郝光明工作\工作\代码整理\9.4\第二个酒店管理系统(ExtJs)源码\MyHotelManager\HotelDAL\obj\Debug\HotelDAL.pdb
+C:\Users\Administrator\Desktop\code\MyHotelManager\HotelDAL\bin\Debug\HotelDAL.dll
+C:\Users\Administrator\Desktop\code\MyHotelManager\HotelDAL\bin\Debug\HotelDAL.pdb
+C:\Users\Administrator\Desktop\code\MyHotelManager\HotelDAL\bin\Debug\HotelModels.dll
+C:\Users\Administrator\Desktop\code\MyHotelManager\HotelDAL\bin\Debug\HotelModels.pdb
+C:\Users\Administrator\Desktop\code\MyHotelManager\HotelDAL\obj\Debug\HotelDAL.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\code\MyHotelManager\HotelDAL\obj\Debug\HotelDAL.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\code\MyHotelManager\HotelDAL\obj\Debug\HotelDAL.csproj.CopyComplete
+C:\Users\Administrator\Desktop\code\MyHotelManager\HotelDAL\obj\Debug\HotelDAL.dll
+C:\Users\Administrator\Desktop\code\MyHotelManager\HotelDAL\obj\Debug\HotelDAL.pdb

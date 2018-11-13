@@ -1,0 +1,10 @@
+E:\郝光明工作\工作\代码整理\9.4\第二个酒店管理系统(ExtJs)源码\MyHotelManager\HotelModels\bin\Debug\HotelModels.dll
+E:\郝光明工作\工作\代码整理\9.4\第二个酒店管理系统(ExtJs)源码\MyHotelManager\HotelModels\bin\Debug\HotelModels.pdb
+E:\郝光明工作\工作\代码整理\9.4\第二个酒店管理系统(ExtJs)源码\MyHotelManager\HotelModels\obj\Debug\HotelModels.dll
+E:\郝光明工作\工作\代码整理\9.4\第二个酒店管理系统(ExtJs)源码\MyHotelManager\HotelModels\obj\Debug\HotelModels.pdb
+C:\Users\Administrator\Desktop\code\MyHotelManager\HotelModels\bin\Debug\HotelModels.dll
+C:\Users\Administrator\Desktop\code\MyHotelManager\HotelModels\bin\Debug\HotelModels.pdb
+C:\Users\Administrator\Desktop\code\MyHotelManager\HotelModels\obj\Debug\HotelModels.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\code\MyHotelManager\HotelModels\obj\Debug\HotelModels.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\code\MyHotelManager\HotelModels\obj\Debug\HotelModels.dll
+C:\Users\Administrator\Desktop\code\MyHotelManager\HotelModels\obj\Debug\HotelModels.pdb
