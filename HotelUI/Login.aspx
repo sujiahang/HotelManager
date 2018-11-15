@@ -56,8 +56,6 @@
                         border="0">
                         <tr>
                             <td>
-
-
                                 <table id="table2" cellspacing="1" cellpadding="0" width="100%"
                                     border="0">
                                     <tbody>

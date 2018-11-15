@@ -57,11 +57,6 @@ Ext.onReady
                                     title:'日常酒店管理',
                                     border:false,
                                     html:'<div id="tree1" style="overflow:auto;width:100%;height:100%"></div>'
-                                },
-                                {
-                                    title:'信息中心',
-                                    border:false,
-                                    html:'<div id="tree2" style="overflow:auto;width:100%;height:100%"></div>'
                                 }
                             ]
                     },

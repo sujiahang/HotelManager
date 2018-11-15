@@ -170,9 +170,17 @@ function AddRoomType()
 									    }
 									},
 									//提交失败的回调函数
-								    failure:function()
-								    {
-								        Ext.Msg.alert('错误','服务器出现错误请稍后再试！');
+                                    failure: function (form, action)
+                                    {
+                                        var flage = action.result.success;
+                                        if (flage == false) {
+                                            Ext.MessageBox.alert('警告', '该房间类型已存在!');
+                                        }
+                                        else
+                                        {
+                                            Ext.Msg.alert('错误', '服务器出现错误请稍后再试！');
+                                        }
+								        
 								    }
                                 }
                             );

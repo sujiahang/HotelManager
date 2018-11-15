@@ -55,8 +55,6 @@
                 </div>
                 <div id="UserName" style="width: 187px; height: 18px; float: right; left: 152px; position: relative; top: 21px; font-size: 12px; color: #ffffff; z-index: 102;">
                 </div>
-                <div id="logo" style="width: 464px; height: 61px; background-image: url(Images/aa.gif);">
-                </div>
             </div>
             <div id="west" style="width: 190px; height: 400px; float: left">
             </div>
