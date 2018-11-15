@@ -8,17 +8,15 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("HotelBLL")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("  ．·冰凍女人")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("HotelBLL")]
-[assembly: AssemblyCopyright("版权所有 (C)   ．·冰凍女人 2008")]
+[assembly: AssemblyCopyright("版权所有 (C)")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-//下载于51aspx.com
 // 将 ComVisible 设置为 false 使此程序集中的类型
 // 对 COM 组件不可见。如果需要从 COM 访问此程序集中的类型，
 // 则将该类型上的 ComVisible 属性设置为 true。
 [assembly: ComVisible(false)]
-//下载于51aspx.com
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
 [assembly: Guid("0b13d5f9-dc3c-48b3-b147-bab3f87b74f8")]
 

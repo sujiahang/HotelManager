@@ -58,7 +58,6 @@ function SerachRoom()
         }
         
     }
-     //该源码首发自www.51aspx.com(５１ａsｐｘ．ｃｏｍ)
 
     var AllRoom = new Ext.FormPanel
     (

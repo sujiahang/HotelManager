@@ -1,5 +1,4 @@
 ﻿//删除酒店客房
-//该源码首发自www.51aspx.com(５１ａｓpｘ．ｃｏｍ)
 
 function DelRoom()
 {

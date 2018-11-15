@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-//该源码首发自www.51aspx.com(５１ａsｐｘ．ｃｏｍ)
 
 namespace HotelModels
 {

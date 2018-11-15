@@ -1,4 +1,4 @@
----------------------------酒店管理系统-----51aspx.com------------------------------------------
+---------------------------酒店管理系统-----------------------------------------------
 use master
 go
 if exists(select * from sysdatabases where name='MyHotelManager')
@@ -261,7 +261,13 @@ go
 /*添加客房表*/
 create proc AddRoom(@Number varchar(20),@BedNumber int,@TypeId int,@StateId int,@Remark varchar(200))
 as
+
+	DECLARE @sum int=0;
+	select @sum=count(*) from Room where Number=301
+	if @sum=0
+	begin 
 	insert into Room values(@Number,@BedNumber,@TypeId,@StateId,@Remark)
+	end
 go
 ---------------------------------------------------------------------------------------
 /*删除客房表(根据房间编号)*/

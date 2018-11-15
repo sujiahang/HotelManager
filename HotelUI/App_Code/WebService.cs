@@ -3,7 +3,6 @@ using System.Web;
 using System.Collections;
 using System.Web.Services;
 using System.Web.Services.Protocols;
-//该源码首发自www.51aspx.com(５１ａｓｐｘ．ｃｏｍ)
 
 /// <summary>
 /// WebService 的摘要说明

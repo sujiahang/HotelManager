@@ -4,7 +4,6 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
-//该源码首发自www.51aspx.com(５１aｓpｘ．ｃｏｍ)
 
 namespace HotelDAL
 {
