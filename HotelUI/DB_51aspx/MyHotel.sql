@@ -205,8 +205,13 @@ go
 create proc AddRoomType(@TypeName varchar(20),@TypePrice money,@IsTv varchar(10),
 				@IsKongTiao varchar(10),@Remark varchar(200))
 as
+	DECLARE @sum int=0;
+    select @sum=COUNT(*) from RoomType WHERE TypeName=@TypeName
+	if @sum=0
+	begin 
 	insert into RoomType values(@TypeName,@TypePrice,@IsTv,@IsKongTiao,
 		@Remark)
+		end
 go
 ---------------------------------------------------------------------------------------
 /*删除房间类型(根据类型Id)*/
