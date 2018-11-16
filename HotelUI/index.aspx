@@ -39,6 +39,7 @@
     <script type="text/javascript" src="Js/SerachRoom.js"></script>
     <script type="text/javascript" src="Js/SerachMoney.js"></script>
     <script type="text/javascript" src="Js/MyTime.js"></script>
+    <script type="text/javascript" src="Js/UpdateRoomPrice.js"></script>
 
 </head>
 <body onload="getCurrentTime(),GetUserName()">

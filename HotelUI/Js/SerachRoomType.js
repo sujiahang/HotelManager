@@ -54,49 +54,109 @@ function SerachRoomType()
             return '<span style="color:red;">'+ '$' + val + '</span>';
         }        
     }
+
+    var AllRoomType = new Ext.grid.GridPanel
+        (
+        {
+            renderTo: 'grid',
+            height: 500,
+            width: 665,
+            cm: colModel, //行列
+            store: strSearchType, //数据源
+            trackMouseOver: true, //鼠标特效
+            loadMask: true,
+            autoShow: true,
+            autoScroll: true,
+            //头部
+            tbar:
+            [
+                '房间查询',
+                { xtype: 'textfield', width: 170, id: 'searchType', name: 'searchType' },
+                { text: '搜索', iconCls: 'search', handler: SerachGridRoomType }, { xtype: 'tbseparator' }
+            ]
+        }
+        )
+
+    //var AllRoomType = new Ext.FormPanel
+    //(
+    //    {             
+    //        id: 'company-form',           
+    //        frame: true,
+    //        labelAlign: 'left',
+    //        bodyStyle:'padding:5px',
+    //        width: 350,
+    //        layout: 'column',
+    //        items:
+    //        [
+    //            {
+
+    //                layout: 'fit',
+    //                items:
+    //                {
+    //                    xtype: 'grid',
+    //                    cm:colModel,
+    //                    store:strSearchType,
+	   //                 height: 400,
+	   //                 width:600,
+	   //                 title:'酒店房间类型信息',
+	   //                 monitorWindowResize: false,
+    //                    autoSizeColumns: true,
+	   //                 trackMouseOver:true, //鼠标特效
+	   //                 //头部
+    //                    tbar:
+    //                    [
+    //                        '房间类型搜索',
+    //                        {xtype:'textfield',width:170,id:'searchType',name:'searchType'},
+    //                        {text:'搜索',iconCls:'search',handler:SerachGridRoomType},{xtype:'tbseparator'}
+    //                    ]
+    //                }
+    //            }
+    //        ],
+    //    renderTo: bd
+    //    }
+    //);
     
-    var AllRoomType = new Ext.FormPanel
-    (
-        {             
-            id: 'company-form',           
-            frame: true,
-            labelAlign: 'left',
-            bodyStyle:'padding:5px',
-            width: 350,
-            layout: 'column',
+    //为右键菜单添加事件监听器
+    AllRoomType.addListener('rowcontextmenu', rightClickFn);
+    var rightClick = new Ext.menu.Menu
+        (
+        {
+            id: 'rightClickCont',
             items:
             [
                 {
-
-                    layout: 'fit',
-                    items:
-                    {
-                        xtype: 'grid',
-                        cm:colModel,
-                        store:strSearchType,
-	                    height: 400,
-	                    width:600,
-	                    title:'酒店房间类型信息',
-	                    monitorWindowResize: false,
-                        autoSizeColumns: true,
-	                    trackMouseOver:true, //鼠标特效
-	                    //头部
-                        tbar:
-                        [
-                            '房间类型搜索',
-                            {xtype:'textfield',width:170,id:'searchType',name:'searchType'},
-                            {text:'搜索',iconCls:'search',handler:SerachGridRoomType},{xtype:'tbseparator'}
-                        ]
+                    id: 'rMenu2',
+                    text: '修改',
+                    handler: function () {
+                        var row = AllRoomType.getSelections();
+                        if (row.length > 0) {
+                            var TypeId = row[0].get('TypeId');
+                            var TypeName = row[0].get('TypeName');
+                            var TypePrice = row[0].get('TypePrice');
+                            var IsTv = row[0].get('IsTv');
+                            var IsKongTiao = row[0].get('IsKongTiao');
+                            var Remark = row[0].get('Remark');
+                            //调用修改房价的方法
+                            UpdateRoomPrice(TypeId, TypeName, TypePrice, IsTv, IsKongTiao, Remark);
+                        }
+                        else {
+                            Ext.MessageBox.alert('警告', '请选择修改的房间!');
+                        }
                     }
                 }
-            ],
-        renderTo: bd
+            ]
         }
-    );
+        );
+
+    function rightClickFn(grid, rowIndex, e) {
+        e.preventDefault();
+        rightClick.showAt(e.getXY());
+    }
     //定义窗体
     newWin = new Ext.Window
     (
         {
+            id:"Price_Window",
             layout : 'fit',
             width : 600,
             height : 400,

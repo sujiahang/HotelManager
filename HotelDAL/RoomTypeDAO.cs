@@ -125,5 +125,32 @@ namespace HotelDAL
             }
             return ds;
         }
+
+        /// <summary>
+        /// 更新
+        /// </summary>
+        /// <param name="rb"></param>
+        /// <returns></returns>
+        public int UpdateRoomInfo(RoomTypeBean rb)
+        {
+            int count = 0;
+            try
+            {
+                SqlParameter[] sp ={
+                    para = new SqlParameter("@TypeId",rb.TypeId),
+                    para = new SqlParameter("@TypeName",rb.TypeName),
+                    para = new SqlParameter("@TypePrice",rb.TypePrice),
+                    para = new SqlParameter("@IsTv",rb.IsTv),
+                    para = new SqlParameter("@IsKongTiao",rb.IsKongTiao),
+                    para = new SqlParameter("@Remark",rb.Remark)
+                };
+                count = sh.RunSql("UpdateRoomType", sp);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return count;
+        }
     }
 }

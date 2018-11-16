@@ -240,6 +240,15 @@ as
 	select TypeId,TypeName from RoomType where TypeId not in(select TypeId from Room)
 go
 ---------------------------------------------------------------------------------------
+/*根据TypeId,更新信息*/
+create proc UpdateRoomType(@TypeId int,@TypeName varchar(200),@TypePrice varchar(200),@IsTv varchar(10),@IsKongTiao varchar(10),@Remark varchar(200))
+as
+	if @TypeId!=0 and @TypeId is not null
+	begin
+	update RoomType set TypePrice=@TypePrice,IsTv=@IsTv,IsKongTiao=@IsKongTiao,Remark=@Remark where TypeId=@TypeId
+	end
+go
+---------------------------------------------------------------------------------------
 /*查询今日房价*/
 create proc GetTodyPrice
 as

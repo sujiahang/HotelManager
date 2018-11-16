@@ -67,6 +67,18 @@ namespace HotelBLL
         }
 
 
+        /// <summary>
+        /// 按照TypeID，更新
+        /// </summary>
+        /// <returns></returns>
+        public bool UpdateRoomType(RoomTypeBean data)
+        {
+            if (rtd.UpdateRoomInfo(data) > 0)
+            {
+                return true;
+            }
+            return false;
+        }
 
         /// <summary>
         /// 查询所有未被使用的房间类型(删除用到)
