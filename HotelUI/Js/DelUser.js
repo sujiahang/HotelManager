@@ -4,7 +4,7 @@ function DelUser()
      //获得所有的用户名(当前登陆除外)
      var strLoginName=new Ext.data.Store
      (
-        {
+         {
             proxy: new Ext.data.HttpProxy
             (
                 {

@@ -10,7 +10,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using HotelBLL;
 
-public partial class Json_GetUser : System.Web.UI.Page
+public partial class Json_GetUserByName : System.Web.UI.Page
 {
     protected string strJson = "";
     UserInfoBLL uib = new UserInfoBLL(); //逻辑层
@@ -18,12 +18,11 @@ public partial class Json_GetUser : System.Web.UI.Page
 protected void Page_Load(object sender, EventArgs e)
     {
         name = Session["LoginName"].ToString();
-        //string sign = Context.Request["sign"];
         if (!Page.IsPostBack)
         {
             try
             {
-                GetUser();
+                GetUserByName();
                 
             }
             catch (Exception)
@@ -33,22 +32,10 @@ protected void Page_Load(object sender, EventArgs e)
         }
     }
 
-
-
-    /// <summary>
-    /// 查询所有员工(删除用到)
-    /// </summary>
-    private void GetUser()
-    {
-        strJson = uib.GetUser(name);
-       
-        
-    }
-
     /// <summary>
     /// 查询所有员工(修改用到)
     /// </summary>
-    private void GetUserByName(string name)
+    private void GetUserByName()
     {
         string str = uib.GetUserByName(name);
         strJson = str;

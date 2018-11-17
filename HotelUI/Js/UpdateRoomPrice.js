@@ -28,6 +28,7 @@ function UpdateRoomPrice(TypeId, TypeName, TypePrice, IsTv, IsKongTiao, Remark) 
                         allowBlank: false,
                         value: TypeName,
                         readOnly: true,
+                        disabled: true,
                     }
                     ),
                 new Ext.form.TextField
@@ -45,7 +46,8 @@ function UpdateRoomPrice(TypeId, TypeName, TypePrice, IsTv, IsKongTiao, Remark) 
                         fieldLabel: '是否有电视',
                         name: 'IsTv',
                         allowBlank: false,
-                        value: IsTv
+                        value: IsTv,
+                        disabled: true,
                     }
                     ),
                 new Ext.form.TextField
@@ -54,7 +56,8 @@ function UpdateRoomPrice(TypeId, TypeName, TypePrice, IsTv, IsKongTiao, Remark) 
                         fieldLabel: '是否有空调',
                         name: 'IsKongTiao',
                         allowBlank: false,
-                        value: IsKongTiao
+                        value: IsKongTiao,
+                        disabled: true,
                     }
                     ),
                 new Ext.form.TextField
@@ -128,11 +131,12 @@ function UpdateRoomPrice(TypeId, TypeName, TypePrice, IsTv, IsKongTiao, Remark) 
     newWin = new Ext.Window
         (
         {
+            id:"UpdateRoom",
             layout: 'fit',
             width: 260,
             height: 300,
             collapsible: true, //允许缩放条
-            closeAction: 'hide',
+            closeAction: 'destroy',
             plain: true,
             modal: 'true',
             items: closeRoom

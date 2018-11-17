@@ -102,6 +102,27 @@ namespace HotelDAL
             return ds;
         }
 
+        /// <summary>
+        /// 查询员工(修改用到)
+        /// </summary>
+        /// <param name="LoginName"></param>
+        /// <returns></returns>
+        public DataSet GetUserByName(string LoginName)
+        {
+            try
+            {
+                SqlParameter[] sp ={
+                    para = new SqlParameter("@LoginName",LoginName)
+                };
+                ds = sh.GetDataSet("GetUserByName", sp);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return ds;
+        }
+
 
 
         /// <summary>
@@ -118,6 +139,32 @@ namespace HotelDAL
                     para = new SqlParameter("@UserId",UserId)
                 };
                 count = sh.RunSql("DelUser", sp);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return count;
+        }
+
+        /// <summary>
+        /// 修改员工(根据Id删除)
+        /// </summary>
+        /// <param name="UserId"></param>
+        /// <returns></returns>
+        public int UpdateUser(UserInfoBean uib)
+        {
+            int count = 0;
+            try
+            {
+                SqlParameter[] sp ={
+                    para = new SqlParameter("@UserId",uib.UserId),
+                //para = new SqlParameter("@LoginName",uib.LoginName),
+                para = new SqlParameter("@LoginPass",uib.LoginPass),
+                para = new SqlParameter("@UserName",uib.UserName),
+                para = new SqlParameter("@Remark",uib.Remark)
+                };
+                count = sh.RunSql("UpdateUser", sp);
             }
             catch (Exception ex)
             {

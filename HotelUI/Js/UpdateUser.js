@@ -1,9 +1,30 @@
 ﻿//添加普通员工
-function AddUser()
+function UpdateUser()
 {
     Ext.QuickTips.init();
     Ext.form.Field.prototype.msgTarget = 'side';
-    var addUser = new Ext.FormPanel
+    //获得人员信息
+    //这里是一个ajax请求
+
+    Ext.Ajax.request
+    (
+        {
+            url:'Json/GetUserByName.aspx',
+            //params:{name:UserId},
+            success: function(response, options)
+            {
+                var check = Ext.util.JSON.decode(response.responseText);
+                Ext.getCmp('UserId').setValue(check.data[0].UserId);
+                Ext.getCmp('LoginName').setValue(check.data[0].LoginName);
+                Ext.getCmp('LoginPass').setValue(check.data[0].LoginPass);
+                Ext.getCmp('UserName').setValue(check.data[0].UserName);
+                Ext.getCmp('Remark').setValue(check.data[0].Remark);
+
+            }
+        }
+    );
+    
+    var UpdateUser = new Ext.FormPanel
     (
         {
             labelWidth:75,
@@ -12,27 +33,39 @@ function AddUser()
             width : 300,
             waitMsgTarget : true,
             items:
-            [
+                [
+                    {
+                        xtype: 'textfield',
+                        fieldLabel: '&nbsp;&nbsp;&nbsp;&nbsp;Id',
+                        labelStyle: 'width:80px',
+                        width: 150,
+                        name: 'UserId',
+                        id: 'UserId',
+                        allowBlank: false,
+                        hidden: true,
+                        hideLabel: true 
+                    },
                 {
                     xtype:'textfield',
                     fieldLabel: '&nbsp;&nbsp;&nbsp;&nbsp;用户名',
                     labelStyle: 'width:80px',
                     width:150,
                     name: 'LoginName',
+                    id: 'LoginName',
                     allowBlank:false,
-                    blankText: '请输入登录Id'
-                    //validator:CheckUserId,//指定验证的方法
-                    //invalidText:'用户名已存在！'
+                    blankText: '请输入登录用户名',
+                    disabled: true,
                 },
                 {
                     inputType:'password',
                     xtype:'textfield',
-                    fieldLabel: '&nbsp;&nbsp;&nbsp;&nbsp;登录密码',
+                    fieldLabel: '&nbsp;&nbsp;&nbsp;&nbsp;填写新密码',
                     labelStyle: 'width:80px',
                     width:150,
                     name: 'LoginPass',
+                    id: 'LoginPass',
                     allowBlank:false,
-                    blankText: '请输入密码'
+                    blankText: '请输入新密码'
                 },
                 {
                     xtype:'textfield',
@@ -40,12 +73,14 @@ function AddUser()
                     labelStyle: 'width:80px',
                     width:150,
                     name: 'UserName',
+                    id: 'UserName',
                     allowBlank:false,
                     blankText: '请输入姓名'
                 },
                 {
                     xtype:'textarea',
-                    name:'remark',
+                    name: 'Remark',
+                    id: 'Remark',
                     fieldLabel:'&nbsp;&nbsp;&nbsp;&nbsp;备注',
                     labelStyle: 'width:80px',
                     height:100,
@@ -80,23 +115,17 @@ function AddUser()
                             addUser.form.submit
                             (
                                 {
-                                    url:'Form/AddUser.aspx',  //提交的页面路径
+                                    url:'Form/UpdateUser.aspx',  //提交的页面路径
                                     method:'post',//提交方式为post
                                     //提交成功的回调函数
 									success:function(form,action)
                                     {
-                                        debugger;
                                         var flage = action.result.success;
-                                        var flage1 = action.result.result;
 									    //如果服务器端传过来的数据为true则表示登录成功
-                                        if (flage == true && flage1==true)
+                                        if (flage == true)
 									    {
-									        Ext.MessageBox.alert('恭喜','添加员工成功!');
+									        Ext.MessageBox.alert('恭喜','修改员工信息成功!');
 									        newWin.hide();
-                                        }
-                                        if (flage == true && flage1 == false)
-                                        {
-                                            Ext.MessageBox.alert('警告', '该用户名已经被注册');
                                         }
 									},
 									//提交失败的回调函数
@@ -131,8 +160,8 @@ function AddUser()
             closeAction : 'hide',
             plain : true,
             modal: 'true', //启用遮罩
-            title : '添加普通员工',
-            items : addUser
+            title : '编辑员工信息',
+            items: UpdateUser
         }
     );
     //显示窗体

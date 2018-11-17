@@ -35,15 +35,24 @@ public partial class Form_AddUser : System.Web.UI.Page
         uib.UserName = Request.Form["UserName"];
         uib.Remark = Request.Form["remark"];
         string json;
-        //如果success为true,则表示服务器端处理成功
-        if (uBll.AddUser(uib))
+        if (uBll.CheckUserId(uib.LoginName))
         {
-            json = @"{success: true}";
+            json = @"{success: true,result:false}"; //已经被注册
         }
         else
-        {
-            json = @"{success: false}";
+        { 
+            //如果success为true,则表示服务器端处理成功
+            if (uBll.AddUser(uib))
+            {
+                json = @"{success: true,result:true}";
+            }
+            else
+            {
+                json = @"{success: false}";
+            }
+
         }
+           
         Response.Write(json);
     }
 }

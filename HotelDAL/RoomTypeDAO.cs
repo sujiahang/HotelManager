@@ -138,10 +138,10 @@ namespace HotelDAL
             {
                 SqlParameter[] sp ={
                     para = new SqlParameter("@TypeId",rb.TypeId),
-                    para = new SqlParameter("@TypeName",rb.TypeName),
+                    //para = new SqlParameter("@TypeName",rb.TypeName),
                     para = new SqlParameter("@TypePrice",rb.TypePrice),
-                    para = new SqlParameter("@IsTv",rb.IsTv),
-                    para = new SqlParameter("@IsKongTiao",rb.IsKongTiao),
+                    //para = new SqlParameter("@IsTv",rb.IsTv),
+                    //para = new SqlParameter("@IsKongTiao",rb.IsKongTiao),
                     para = new SqlParameter("@Remark",rb.Remark)
                 };
                 count = sh.RunSql("UpdateRoomType", sp);

@@ -10,15 +10,30 @@
     <script type="text/javascript" src="Ext/adapter/ext/ext-base.js"></script>
     <script type="text/javascript" src="Ext/ext-all.js"></script>
     <script type="text/javascript" src="Ext/ext-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="Ext/adapter/jquery/jquery.js"></script>
 
     <script type="text/javascript">
         function GetUserName() {
-            WebService.GetLoginName
-                (
-                callback = function (res) {
-                    $get('UserName').innerHTML = res;
-                }
-                )
+            //WebService.GetLoginName
+            //    (
+            //    callback = function (res) {
+            //        $get('UserName').innerHTML = res;
+            //    }
+            //)
+            //$.ajax({
+            //    type: "get",
+            //    url: "index.aspx/GetLoginName",
+            //    async: true,
+            //    contentType: "application/json;charset=utf-8",
+            //    dataType: "json",
+            //    success: function (msg) {
+            //        debugger;
+            //        alert(msg.d);
+            //    },
+            //    error: function (msg) {
+            //        alert(msg.d);
+            //    }
+            //})
         }
     </script>
 
@@ -40,6 +55,7 @@
     <script type="text/javascript" src="Js/SerachMoney.js"></script>
     <script type="text/javascript" src="Js/MyTime.js"></script>
     <script type="text/javascript" src="Js/UpdateRoomPrice.js"></script>
+    <script type="text/javascript" src="Js/UpdateUser.js"></script>
 
 </head>
 <body onload="getCurrentTime(),GetUserName()">

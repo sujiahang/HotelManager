@@ -168,12 +168,28 @@ Ext.onReady
                 }
             }
         );
-        
+
         //第三个根节点的第二个子节点
         var c2 = new Ext.tree.TreeNode
+            (
+            {
+                id: 'c2',
+                icon: 'Images/write.gif',//图标文件
+                text: '编辑员工信息',
+                listeners:
+                    {
+                        'click': function (node, event) {
+                            UpdateUser();
+                        }
+                    }
+            }
+            );
+        
+        //第三个根节点的第二个子节点
+        var c3 = new Ext.tree.TreeNode
         (
             {
-                id:'c2',
+                id:'c3',
                 icon:'Images/write2.gif',//图标文件
                 text:'删除员工',
                 listeners:
@@ -189,6 +205,7 @@ Ext.onReady
         //添加子节点到第三个根节点
         c.appendChild(c1);
         c.appendChild(c2);
+        c.appendChild(c3);
         
         //第四个根节点
         var d = new Ext.tree.TreeNode

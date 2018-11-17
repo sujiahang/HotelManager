@@ -65,8 +65,30 @@ namespace HotelBLL
             string str = jsonHelp.ToString();
             return str;
         }
+        
 
-
+        /// <summary>
+        /// 查询员工(修改用到)
+        /// </summary>
+        /// <param name="LoginName"></param>
+        /// <returns></returns>
+        public string GetUserByName(string LoginName)
+        {
+            JSONHelper jsonHelp = new JSONHelper();
+            jsonHelp.success = true;
+            DataSet ds = uid.GetUserByName(LoginName);
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                jsonHelp.AddItem("UserId", dr["UserId"].ToString());
+                jsonHelp.AddItem("LoginName", dr["LoginName"].ToString());
+                jsonHelp.AddItem("LoginPass", dr["LoginPass"].ToString());
+                jsonHelp.AddItem("UserName", dr["UserName"].ToString());
+                jsonHelp.AddItem("Remark", dr["Remark"].ToString());
+                jsonHelp.ItemOk();
+            }
+            string str = jsonHelp.ToString();
+            return str;
+        }
 
         /// <summary>
         /// 添加普通员工
@@ -92,6 +114,20 @@ namespace HotelBLL
         public bool DelUser(int UserId)
         {
             if (uid.DelUser(UserId) > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// 删除员工(根据Id删除)
+        /// </summary>
+        /// <param name="UserId"></param>
+        /// <returns></returns>
+        public bool UpdateUser(UserInfoBean User)
+        {
+            if (uid.UpdateUser(User) > 0)
             {
                 return true;
             }
